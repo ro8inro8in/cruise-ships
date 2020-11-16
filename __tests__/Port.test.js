@@ -7,10 +7,28 @@ describe("Port constructor", () => {
     expect(new Port()).toBeInstanceOf(Object);
   });
 });
-  it("Shipping current port", () => {
+it("Shipping current port", () => {
   const port = new Port("Calais");
-  expect(port).toEqual({name: 'Calais'})
-
+  expect(port.name).toBe("Calais");
 });
-// need to look at matchers toHaveProperty
-//can use toMatchObject, and or toHaveProperty
+
+it("Can add new ships", () => {
+  const port = new Port("Dover");
+  const ship = {};
+
+  port.addShip(ship);
+
+  expect(port.ships).toContain(ship);
+});
+
+it("can remove a ship", () => {
+  const port = new Port("Dover");
+  const titanic = {};
+  const queenMary = {};
+
+  port.addShip(titanic);
+  port.addShip(queenMary);
+  port.removeShip(queenMary);
+
+  expect(port.ships).toEqual([titanic]);
+});
