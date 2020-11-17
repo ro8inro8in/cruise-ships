@@ -10,11 +10,5 @@ Port.prototype = {
     this.ships.pop(ship);
   },
 };
-
 module.exports = Port;
-//Port.prototype.removeShip = function () {
-//  this.ships.splice(1, 1);
-//  Port.prototype = {
-//   removeShip(){
-//     this.ships.splice(1, 1)
-//},
+
