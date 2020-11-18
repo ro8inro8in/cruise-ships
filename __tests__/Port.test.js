@@ -14,8 +14,8 @@ describe("with ports", () => {
       expect(port.name).toBe("Calais");
     });
 
-    it("Can add new ships", () => {
-      const ship = {};
+    it("Can add ships", () => {
+      const ship = jest.fn();
 
       port.addShip(ship);
 
@@ -23,8 +23,8 @@ describe("with ports", () => {
     });
 
     it("can remove a ship", () => {
-      const titanic = {};
-      const queenMary = {};
+      const titanic = jest.fn();
+      const queenMary = jest.fn();
 
       port.addShip(titanic);
       port.addShip(queenMary);
