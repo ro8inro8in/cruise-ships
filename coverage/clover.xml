@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1605706030615" clover="3.2.0">
-  <project timestamp="1605706030615" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="12" coveredelements="12" complexity="0" loc="8" ncloc="8" packages="1" files="2" classes="2"/>
+<coverage generated="1605783761612" clover="3.2.0">
+  <project timestamp="1605783761612" name="All files">
+    <metrics statements="25" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7" elements="34" coveredelements="34" complexity="0" loc="25" ncloc="25" packages="1" files="3" classes="3"/>
     <file name="Itinerary.js" path="/Users/robinedwards/Desktop/cruise-ships/src/Itinerary.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="2" type="stmt"/>
@@ -9,12 +9,32 @@
     </file>
     <file name="Port.js" path="/Users/robinedwards/Desktop/cruise-ships/src/Port.js">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <line num="2" count="11" type="stmt"/>
-      <line num="3" count="11" type="stmt"/>
-      <line num="5" count="2" type="stmt"/>
+      <line num="2" count="9" type="stmt"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
       <line num="7" count="3" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
-      <line num="13" count="2" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+    </file>
+    <file name="Ship.js" path="/Users/robinedwards/Desktop/cruise-ships/src/Ship.js">
+      <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="6" type="stmt"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="6" count="6" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="15" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
