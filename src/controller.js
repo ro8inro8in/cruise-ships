@@ -15,7 +15,7 @@
         backgrounds[backgroundIndex % backgrounds.length]
       }')`;
       backgroundIndex += 1;
-    }, 1000);
+    }, 300);
   };
   Controller.prototype.renderPorts = function (ports) {
     const portsElement = document.querySelector("#ports");
@@ -46,39 +46,35 @@
     const ship = this.ship;
     const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
     const nextPortIndex = currentPortIndex + 1;
-    const nextPortElement = document.querySelector(
-      `[data-port-index='${nextPortIndex}']`
-    );
+    const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+    if (!nextPortElement) {
+      return alert("End of the line!");
+    }
+    this.renderMessage(`Now departing ${ship.currentPort.name}`)
     const shipElement = document.querySelector("#ship");
     const sailInterval = setInterval(() => {
       const shipLeft = parseInt(shipElement.style.left, 10);
       if (shipLeft === nextPortElement.offsetLeft - 32) {
         ship.setSail();
         ship.dock();
+        this.renderMessage(`Docking at ${ship.itinerary.ports[nextPortIndex].name}`);
         clearInterval(sailInterval);
       }
       shipElement.style.left = `${shipLeft + 1}px`;
     }, 20);
+  };
     
-    if (!nextPortElement) {
-      return alert("End of the line!");
-      
+    Controller.prototype.renderMessage = function (message) {
+      const messageElement = document.createElement('div');
+      messageElement.id = 'message';
+      messageElement.innerHTML = message;
+      const viewport = document.querySelector('#viewport');
+      viewport.appendChild(messageElement);
+      setTimeout(() => {
+       viewport.removeChild(messageElement);
+      }, 1500);
     }
-       this.renderMessageBox(`Now departing ${ship.currentPort.name}`)
-    
-     Controller.prototype.renderMessage = function () {
-       const messageElement = document.createElement('div');
-       messageElement.id = 'message';
-       messageElement.innerHTML = message;
-
-       const viewport = document.querySelector('#viewport');
-       viewport.appendChild(messageElement);
-       setTimeout(() => {
-         viewport.removeChild(messageElement);
-       }, 2000);
-     }
-   };
-
+  
   if (typeof module !== "undefined" && module.exports) {
     module.exports = Controller;
   } else {

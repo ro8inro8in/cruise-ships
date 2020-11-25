@@ -1,5 +1,6 @@
 html, body {
     height: 100%;   
+
 }
 body {
     background-color:   #0000;
@@ -13,6 +14,7 @@ body {
     position:   relative;
     overflow-x: auto;
     background-image:   url('../images/water0.png');
+    
 }
 #ports {
     margin-top: 96px;
@@ -35,13 +37,15 @@ body {
     background-color: #FB3640;
     border-bottom: 4px solid #d8040f;
     color: white;
-    font-family: inherit;
     padding: 10px 20px;
-    position: absolute;
+    position: sticky;
+    top: 250px;
     bottom: 0;
     left: 0;
     width: 100%;
     font-family: 'Press Start 2P', cursive;
+    text-align: center;
+
 }
 #sailbutton:focus {
     background-color: #d8040f;
@@ -49,12 +53,17 @@ body {
     padding-top: 14px;
   }
 #message {
-    padding: 16px;
-    font-family: 'Press Start 2P', cursive;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    border-top: 3px solid black;
+    border: 0;
     background-color: white;
+    border-top: 3px solid black;
+    padding: 0 ,0, 0 ,16px;
+    position: sticky;  
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
 }
 
