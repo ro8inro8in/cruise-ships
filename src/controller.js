@@ -53,6 +53,7 @@
     const sailInterval = setInterval(() => {
       const shipLeft = parseInt(shipElement.style.left, 10);
       if (shipLeft === nextPortElement.offsetLeft - 32) {
+        ship.setSail();
         ship.dock();
         clearInterval(sailInterval);
       }
@@ -61,8 +62,22 @@
     
     if (!nextPortElement) {
       return alert("End of the line!");
+      
     }
-  };
+       this.renderMessageBox(`Now departing ${ship.currentPort.name}`)
+    
+     Controller.prototype.renderMessage = function () {
+       const messageElement = document.createElement('div');
+       messageElement.id = 'message';
+       messageElement.innerHTML = message;
+
+       const viewport = document.querySelector('#viewport');
+       viewport.appendChild(messageElement);
+       setTimeout(() => {
+         viewport.removeChild(messageElement);
+       }, 2000);
+     }
+   };
 
   if (typeof module !== "undefined" && module.exports) {
     module.exports = Controller;
