@@ -1,12 +1,15 @@
+
 html, body {
     height: 100%;   
 
 }
+
 body {
-    background-color:   #0000;
+    background-color: black;
     display:    flex;
     justify-content:    center;
     align-items:    center;
+    
 }
 #viewport {
     width:  640px;
@@ -66,4 +69,20 @@ body {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
-
+#updatemessage {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    color: white;
+    background-color: ;
+    border-top: 3px solid black;
+    padding: 50px;
+    position: absolute;
+    top: 0;  
+    bottom: 800px;
+    right: 0px;
+    width: 40%;
+    height: 0px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: right;
+}

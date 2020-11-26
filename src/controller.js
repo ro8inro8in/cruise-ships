@@ -1,12 +1,15 @@
 (function exportController() {
   function Controller() {
     this.ship = ship;
-
     this.initialiseSea();
     document.querySelector("#sailbutton").addEventListener("click", () => {
       this.setSail();
+      //latest update
+      this.updateMessage(); 
     });
+   
   }
+
   Controller.prototype.initialiseSea = function initialiseSea() {
     const backgrounds = ["./images/water0.png", "./images/water1.png"];
     let backgroundIndex = 0;
@@ -16,7 +19,8 @@
       }')`;
       backgroundIndex += 1;
     }, 300);
-  };
+  }
+
   Controller.prototype.renderPorts = function (ports) {
     const portsElement = document.querySelector("#ports");
     portsElement.style.width = "0px";
@@ -29,7 +33,8 @@
       const portsElementWidth = parseInt(portsElement.style.width, 10);
       portsElement.style.width = `${portsElementWidth + 256}px`;
     });
-  };
+  }
+
   Controller.prototype.renderShip = function () {
     const ship = this.ship;
     const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
@@ -74,7 +79,18 @@
        viewport.removeChild(messageElement);
       }, 1500);
     }
-  
+    //latest update
+    Controller.prototype.updateMessage = function () {
+    const ship = this.ship;
+    const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+    const nextPortIndex = currentPortIndex + 1;
+    const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+    if (!nextPortElement) {
+      return alert("");
+    }
+    }
+
+
   if (typeof module !== "undefined" && module.exports) {
     module.exports = Controller;
   } else {
