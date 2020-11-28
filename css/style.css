@@ -72,17 +72,12 @@ body {
 #updateMessage {
     display: flex;
     flex-direction: column;
-    border: 0;
     color: white;
-    background-color: ;
-    border-top: 3px solid black;
-    padding: 50px;
+    padding: 20px;
     position: absolute;
     top: 0;  
-    bottom: 800px;
-    right: 0px;
-    width: 40%;
-    height: 0px;
+    right: 0;
+    width: 300px;
     font-family: 'Press Start 2P', cursive;
-    text-align: right;
+    text-align: left;
 }
